@@ -138,7 +138,9 @@ ggtree(beast_tree, aes(color = outbreak), mrsd = "2018-10-16") + theme_tree2() +
 
 With this visualisation, it becomes much clearer which parts of the tree we should be focused in. The Kassala clade represents the data from the outbreak we're investigating, and this representation makes it easier to read into the time when this epidemic began.
 
-You may have noticed that it is not only the tree tips which are coloured but rather branches and nodes. This type of reconstruction, where the locations of tree nodes (which are inferred ancestors to the sequences that branch out of these nodes) are inferred, is called phylogeography. Phylogeographic applications are common outside of genomic epidemiology, and in our case can provide information on the locations where viral lineages emerge and when these are introduced into new locations. This particular tree included a very simple method to infer the locations of the nodes called parsimony; more complex and statistically robust methods also exist and would be used during more systematic analyses. From this additional information, when is it likely that the Kassala outbreak started? How do you interpret the long branch at the base of the Kassala outbreak?
+You may have noticed that it is not only the tree tips which are coloured but rather branches and nodes. This type of reconstruction, where the locations of tree nodes (which are inferred ancestors to the sequences that branch out of these nodes) are inferred, is called phylogeography. Phylogeographic applications are common outside of genomic epidemiology, and in our case can provide information on the locations where viral lineages emerge and when these are introduced into new locations. This particular tree included a very simple method to infer the locations of the nodes called parsimony; more complex and statistically robust methods also exist and would be used during more systematic analyses. From this additional information, when is it likely that the Kassala outbreak started? How do you interpret the long branch at the base of the Kassala outbreak? 
+I think it is likely the Kassala outbreak started in December 2017, given that the ancestral node is located at this point. That said, it is possible that it started earlier due to sampling limitations.
+The long branch at the base represents a lack of information in sequence changes between the last sampled virus ancestral to the 2018 Kassala oubreak and occurring from 2016 to around August 2017. 
 
 \
 **3. IDENTIFYING NODES AND TRANSITIONS BETWEEN LOCATIONS** 
@@ -261,7 +263,7 @@ beast_log_burnin |>
   theme_classic()
 ```
 
-Look back at the tree and the rough estimate for the age of the Kassala MRCA and compare to the posterior distribution for the same value. Do they match?
+Look back at the tree and the rough estimate for the age of the Kassala MRCA and compare to the posterior distribution for the same value. Do they match? There is a roughly 6 month mismatch between the age for the MRCA and posterior distribution.
 
 The posterior distribution of a parameter estimate is an important indicator of the uncertainty related to this value. Similarly to how you would estimate a credible interval (e.g., 95% CI) for a distribution, a posterior probabiloity distribution can be read in a similar way by estimating the Highest Posterior Probability Density (HPD) - routinely the 95% HPD is a measure used to estimate the uncertainty around any parameter estimate. For the Kassala MRCA age, we can show it by using the following code:
 
@@ -289,8 +291,9 @@ beast_log_burnin |>
 ```
 
 The HPDinterval() function in coda estimates the upper and lower 95% HPD values which have been plotted on the probability distribution. With this additional information, what can you conclude regarding the time of origin for the Kassala outbreak?
+The ancestral virus evolved some time between April 2016 and May 2017.
 
-Remember that this same procedure can be applied to any parameter from the .log file. Here for example, we will compare the age of the entire phylogeny (the root of the tree) and the MRCA of the Kassala outbreak using violin plots (which show the distribution of values and are useful when comparing different parameter estimates). What does this comparison show? Since the root of the tree shows a likely origin somewhere between African and the Indian Ocean islands, how long did it take for the virus to be re-introduced into Africa during the Sudan outbreak?
+Remember that this same procedure can be applied to any parameter from the .log file. Here for example, we will compare the age of the entire phylogeny (the root of the tree) and the MRCA of the Kassala outbreak using violin plots (which show the distribution of values and are useful when comparing different parameter estimates). What does this comparison show? Since the root of the tree shows a likely origin somewhere between African and the Indian Ocean islands, how long did it take for the virus to be re-introduced into Africa during the Sudan outbreak? Around 10 years?
 
 ```{r}
 beast_log_burnin |>
