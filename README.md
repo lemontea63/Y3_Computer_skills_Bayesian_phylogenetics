@@ -16,3 +16,17 @@ Y3_Computer_skills_Bayesian_phylogenetics/
 │   ├── CHIKV_IndianOcean_metadata.csv
 │   └── CHIKV_IndianOcean_updated_metadata.csv
 └── CHIKV_BEAST_output_processing.Rmd
+<<<<<<< HEAD
+=======
+```
+
+## Script for running this repository
+Clone this repository to your local machine by accessing the console/terminal and typing the following (make sure you have git installed)
+
+```
+git clone git@github.com:BernardoGG/Y3_Computer_skills_Bayesian_phylogenetics.git
+```
+```
+install.packages("remotes")
+remotes::install_github("YuLab-SMU/ggtree")
+>>>>>>> 8776a74767da93f96a5cd57b600a247d536f3bb3
