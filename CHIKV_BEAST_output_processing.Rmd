@@ -78,6 +78,7 @@ ggtree(beast_tree, mrsd = "2018-10-16") + theme_tree2()
 ```
 
 With this scale, it is easy to see that the tree shows the evolution of a CHIKV lineage over the course of more than a decade. From the description of the outbreak on your worksheet, thinking of the dates when the Kassala samples were likely collected, which part of the tree is likely to represent the Kassala outbreak?
+I think the cluster furthest to the right, seeing as this represents viruses which evolved in 2018.
 
 A simple trick to facilitate visualisation is to add guide lines and a custom timescale.
 
@@ -97,8 +98,9 @@ ggtree(beast_tree, mrsd = "2018-10-16") + theme_tree2() +
 ```
 
 Now we have markers for every year represented in the tree. With these additional guidelines, you may also start looking at the persistence time of different lineages and parts of the tree. How would you interpret the longer branches on the tree?
+  Areas where we have no information about changes to sequences between nodes between two time points.
 
-Ultimately, a tree like this cannot be interpreted without additional information. A simple piece of information to include is the names of the sequences at the tree tips which, depending on the naming convention, can include the location where they were collected and the date when they were collected. We can show these by executing the folllowing code:
+Ultimately, a tree like this cannot be interpreted without additional information. A simple piece of information to include is the names of the sequences at the tree tips which, depending on the naming convention, can include the location where they were collected and the date when they were collected. We can show these by executing the following code:
 
 ```{r}
 # Add sequence names
